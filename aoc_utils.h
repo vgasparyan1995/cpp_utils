@@ -55,6 +55,10 @@ public:
         return end_ == other.end_ && stream_ == other.stream_;
     }
 
+    bool operator!=(const LineIterator& other) {
+        return !(*this == other);
+    }
+
 private:
     Stream* stream_ = nullptr;
     std::string current_;
